@@ -1,0 +1,253 @@
+{
+  "info": {
+    "name": "Excel Data Processing API",
+    "description": "FastAPI application for reading and processing Excel sheet data",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Root - API Information",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            ""
+          ]
+        },
+        "description": "Get basic API information and available endpoints"
+      },
+      "response": []
+    },
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "health"
+          ]
+        },
+        "description": "Check if the API is healthy and Excel processor is initialized"
+      },
+      "response": []
+    },
+    {
+      "name": "List Tables",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/list_tables",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "list_tables"
+          ]
+        },
+        "description": "List all table names present in the Excel sheet"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Table Details",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/get_table_details?table_name=Initial Investment",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "get_table_details"
+          ],
+          "query": [
+            {
+              "key": "table_name",
+              "value": "Initial Investment",
+              "description": "Name of the table to get details for"
+            }
+          ]
+        },
+        "description": "Get row names (first column values) for a specific table"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Table Details - Revenue Projections",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/get_table_details?table_name=Revenue Projections",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "get_table_details"
+          ],
+          "query": [
+            {
+              "key": "table_name",
+              "value": "Revenue Projections",
+              "description": "Name of the table to get details for"
+            }
+          ]
+        },
+        "description": "Get row names for Revenue Projections table"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Table Details - Operating Expenses",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/get_table_details?table_name=Operating Expenses",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "get_table_details"
+          ],
+          "query": [
+            {
+              "key": "table_name",
+              "value": "Operating Expenses",
+              "description": "Name of the table to get details for"
+            }
+          ]
+        },
+        "description": "Get row names for Operating Expenses table"
+      },
+      "response": []
+    },
+    {
+      "name": "Row Sum - Tax Credit",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/row_sum?table_name=Initial Investment&row_name=Tax Credit (if any )=",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "row_sum"
+          ],
+          "query": [
+            {
+              "key": "table_name",
+              "value": "Initial Investment",
+              "description": "Name of the table"
+            },
+            {
+              "key": "row_name",
+              "value": "Tax Credit (if any )=",
+              "description": "Name of the row to calculate sum for"
+            }
+          ]
+        },
+        "description": "Calculate sum of numerical values in the Tax Credit row"
+      },
+      "response": []
+    },
+    {
+      "name": "Row Sum - Initial Investment",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/row_sum?table_name=Initial Investment&row_name=Initial Investment=",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "row_sum"
+          ],
+          "query": [
+            {
+              "key": "table_name",
+              "value": "Initial Investment",
+              "description": "Name of the table"
+            },
+            {
+              "key": "row_name",
+              "value": "Initial Investment=",
+              "description": "Name of the row to calculate sum for"
+            }
+          ]
+        },
+        "description": "Calculate sum of numerical values in the Initial Investment row"
+      },
+      "response": []
+    },
+    {
+      "name": "Row Sum - Opportunity Cost",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/row_sum?table_name=Initial Investment&row_name=Opportunity cost (if any)=",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "row_sum"
+          ],
+          "query": [
+            {
+              "key": "table_name",
+              "value": "Initial Investment",
+              "description": "Name of the table"
+            },
+            {
+              "key": "row_name",
+              "value": "Opportunity cost (if any)=",
+              "description": "Name of the row to calculate sum for"
+            }
+          ]
+        },
+        "description": "Calculate sum of numerical values in the Opportunity cost row"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:9090",
+      "type": "string"
+    }
+  ]
+}
